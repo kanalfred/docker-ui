@@ -31,6 +31,7 @@ RUN \
     # x11 themes support
     apt-get install -y gnome-themes-standard && \
     apt-get install -y gtk2-engines && \
+    apt-get install -y gtk2-engines-murrine && \
     apt-get install -y dbus-x11
 #RUN apt-get install -y vim
 
