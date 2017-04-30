@@ -27,7 +27,9 @@ RUN \
     # install add-apt-repository
     apt-get install -y software-properties-common && \
     # x11 themes support
-    apt-get install -y gnome-themes-standard
+    apt-get install -y gnome-themes-standard && \
+    apt-get install -y gtk2-engines && \
+    apt-get install -y dbus-x11
 #RUN apt-get install -y vim
 
 # Sublime 3
