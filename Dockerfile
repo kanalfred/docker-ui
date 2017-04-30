@@ -8,8 +8,10 @@
 # Give docker user permission for local x11
 # xhost +local:docker
 #
+# firefox:
+# docker run -it --rm -v /usr/share/themes:/usr/share/themes -v $HOME:/$HOME -v `pwd`:/app -w /app -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix kanalfred/ui firefox
 # Sublime:
-# docker run -it --rm -v `pwd`:/app -w /app -v $HOME:/$HOME -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix kanalfred/ui sublime -new
+# docker run -it --rm -v /usr/share/themes:/usr/share/themes -v $HOME:/$HOME -v `pwd`:/app -w /app -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix kanalfred/ui sublime -new
 #
 # refer
 # http://stackoverflow.com/questions/16296753/can-you-run-gui-apps-in-a-docker-container/25280523#25280523
