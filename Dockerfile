@@ -11,6 +11,10 @@
 # Sublime:
 # docker run -it --rm -v `pwd`:/app -w /app -v $HOME:/$HOME -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix kanalfred/ui sublime -new
 #
+# refer
+# http://stackoverflow.com/questions/16296753/can-you-run-gui-apps-in-a-docker-container/25280523#25280523
+# http://stackoverflow.com/questions/25281992/alternatives-to-ssh-x11-forwarding-for-docker-containers/25334301#25334301
+# https://unix.stackexchange.com/questions/196677/what-is-tmp-x11-unix
 #######################
 FROM ubuntu:16.04
 
@@ -20,7 +24,10 @@ RUN \
     apt-get install -y rdesktop && \
     apt-get install -y libcanberra-gtk* && \
     #apt-get update && 
-    apt-get install -y software-properties-common
+    # install add-apt-repository
+    apt-get install -y software-properties-common && \
+    # x11 themes support
+    apt-get install -y gnome-themes-standard
 #RUN apt-get install -y vim
 
 # Sublime 3
